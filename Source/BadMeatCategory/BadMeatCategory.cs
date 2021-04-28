@@ -29,6 +29,18 @@ namespace BadMeatCategory
                 if (FoodUtility.IsHumanlikeMeat(descendantThingDef))
                 {
                     thingsToMove.Add(descendantThingDef);
+                    continue;
+                }
+
+                if (descendantThingDef.ingestible.sourceDef?.race != null && descendantThingDef.ingestible.sourceDef.race.FleshType == FleshTypeDefOf.Insectoid)
+                {
+                    thingsToMove.Add(descendantThingDef);
+                    continue;
+                }
+
+                if (descendantThingDef.defName == "MeatRotten")
+                {
+                    thingsToMove.Add(descendantThingDef);
                 }
             }
 
@@ -38,6 +50,21 @@ namespace BadMeatCategory
                 thingDef.thingCategories.Remove(MeatRawCategory);
                 MeatBadCategory.childThingDefs.Add(thingDef);
                 thingDef.thingCategories.Add(MeatBadCategory);
+                if (thingDef.defName != "MeatRotten")
+                {
+                    continue;
+                }
+
+                // Support for Rotted Meat-mod
+                var rottenCategoryDef = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatRawRotten");
+                if (rottenCategoryDef == null)
+                {
+                    continue;
+                }
+
+                rottenCategoryDef.childThingDefs.Remove(thingDef);
+                thingDef.thingCategories.Remove(rottenCategoryDef);
+                rottenCategoryDef.ClearCachedData();
             }
 
             MeatRawCategory.ClearCachedData();

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Bad Meat Category</name>
   <packageId>Mlie.BadMeatCategory</packageId>
@@ -14,6 +14,7 @@
   <description>[img]https://i.imgur.com/WAEzk68.png[/img]
 
 Puts all meat that is defined as coming from a Humanlike race and would cause bad thoughts from eating in its own category 
+Also moves meat from Insectoids and rotten meat from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2466790513]Rotten Meat[/url]
 
 Idea by: Rasutei 
 

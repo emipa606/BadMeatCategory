@@ -4,8 +4,18 @@
 
 
 Puts all meat that is defined as coming from a Humanlike race and would cause bad thoughts from eating in its own category 
+Also moves meat from Insectoids and rotten meat from https://steamcommunity.com/sharedfiles/filedetails/?id=2466790513]Rotten Meat
 
 Idea by: Rasutei 
+
+[table]
+    [tr]
+        [td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
+[/td]
+        [td]https://github.com/emipa606/BadMeatCategory]![Image](https://i.imgur.com/kTkpTOE.png)
+[/td]
+    [/tr]
+[/table]
 	
 ![Image](https://i.imgur.com/Rs6T6cr.png)
 

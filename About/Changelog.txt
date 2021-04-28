@@ -1,4 +1,7 @@
 # Changelog for BadMeatCategory
 
+1.0.1.0 - Added support for insect-meat and the  rotten meat-mod
+
+
 1.0.0.0 - First publish
 
