@@ -1,5 +1,8 @@
 # Changelog for BadMeatCategory
 
+1.0.2.0 - Added support for Pawnmorpher
+
+
 1.0.1.0 - Added support for insect-meat and the  rotten meat-mod
 
 

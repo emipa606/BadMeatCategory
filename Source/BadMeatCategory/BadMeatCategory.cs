@@ -12,17 +12,24 @@ namespace BadMeatCategory
             var MeatRawCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatRaw");
             if (MeatRawCategory == null)
             {
-                Log.ErrorOnce("[BadMeatCategory]: Could not find the MeatRaw-category. Will not sort bad meat.", "MeatRawCategory".GetHashCode());
+                Log.ErrorOnce("[BadMeatCategory]: Could not find the MeatRaw-category. Will not sort bad meat.",
+                    "MeatRawCategory".GetHashCode());
                 return;
             }
 
             var MeatBadCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatBad");
             if (MeatBadCategory == null)
             {
-                Log.ErrorOnce("[BadMeatCategory]: Could not find the MeatBad-category. Will not sort bad meat.", "MeatBadCategory".GetHashCode());
+                Log.ErrorOnce("[BadMeatCategory]: Could not find the MeatBad-category. Will not sort bad meat.",
+                    "MeatBadCategory".GetHashCode());
                 return;
             }
 
+            var extraThingDefs = new List<string>
+            {
+                "Meat_Chaocow",
+                "MeatRotten"
+            };
             var thingsToMove = new List<ThingDef>();
             foreach (var descendantThingDef in MeatRawCategory.DescendantThingDefs)
             {
@@ -32,13 +39,14 @@ namespace BadMeatCategory
                     continue;
                 }
 
-                if (descendantThingDef.ingestible.sourceDef?.race != null && descendantThingDef.ingestible.sourceDef.race.FleshType == FleshTypeDefOf.Insectoid)
+                if (descendantThingDef.ingestible.sourceDef?.race != null &&
+                    descendantThingDef.ingestible.sourceDef.race.FleshType == FleshTypeDefOf.Insectoid)
                 {
                     thingsToMove.Add(descendantThingDef);
                     continue;
                 }
 
-                if (descendantThingDef.defName == "MeatRotten")
+                if (extraThingDefs.Contains(descendantThingDef.defName))
                 {
                     thingsToMove.Add(descendantThingDef);
                 }
