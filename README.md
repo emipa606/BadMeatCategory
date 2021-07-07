@@ -6,6 +6,8 @@
 Puts all meat that is defined as coming from a Humanlike race and would cause bad thoughts from eating in its own category 
 Also moves meat from Insectoids, rotten meat from https://steamcommunity.com/sharedfiles/filedetails/?id=2466790513]Rotten Meat and Chaomeat from https://steamcommunity.com/sharedfiles/filedetails/?id=1786466855]Pawnmorpher
 
+Russian translation by Tkhakiro
+
 Idea by: Rasutei 
 
 [table]

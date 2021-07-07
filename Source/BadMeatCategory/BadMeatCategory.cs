@@ -33,7 +33,7 @@ namespace BadMeatCategory
             var thingsToMove = new List<ThingDef>();
             foreach (var descendantThingDef in MeatRawCategory.DescendantThingDefs)
             {
-                if (FoodUtility.IsHumanlikeMeat(descendantThingDef))
+                if (FoodUtility.GetMeatSourceCategory(descendantThingDef) == MeatSourceCategory.Humanlike)
                 {
                     thingsToMove.Add(descendantThingDef);
                     continue;
