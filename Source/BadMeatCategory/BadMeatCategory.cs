@@ -77,6 +77,8 @@ namespace BadMeatCategory
 
             MeatRawCategory.ClearCachedData();
             MeatBadCategory.ClearCachedData();
+            MeatRawCategory.ResolveReferences();
+            MeatBadCategory.ResolveReferences();
             Log.Message($"[BadMeatCategory]: Moved {thingsToMove.Count} meat to the Bad Meat-category");
         }
     }
