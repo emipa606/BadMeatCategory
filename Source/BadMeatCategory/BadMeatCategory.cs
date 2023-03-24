@@ -7,6 +7,15 @@ namespace BadMeatCategory;
 [StaticConstructorOnStartup]
 public class BadMeatCategory
 {
+    static List<string> GetExtraThingDefs()
+    {
+        return new List<string>
+        {
+            "Meat_Chaocow",
+            "MeatRotten"
+        };
+    }
+
     static BadMeatCategory()
     {
         var MeatRawCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatRaw");
@@ -25,11 +34,7 @@ public class BadMeatCategory
             return;
         }
 
-        var extraThingDefs = new List<string>
-        {
-            "Meat_Chaocow",
-            "MeatRotten"
-        };
+        var extraThingDefs = GetExtraThingDefs();
         var thingsToMove = new List<ThingDef>();
         foreach (var descendantThingDef in MeatRawCategory.DescendantThingDefs)
         {
