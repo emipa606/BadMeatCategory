@@ -1,5 +1,8 @@
 # Changelog for BadMeatCategory
 
+1.4.3 - Fix for the last non-working patch
+
+
 1.4.2 - Addeds support for SynthMeat from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1715402900]Replimat[/url]. Thanks delmain!
 
 
