@@ -12,7 +12,8 @@ public class BadMeatCategory
         return new List<string>
         {
             "Meat_Chaocow",
-            "MeatRotten"
+            "MeatRotten",
+            "Replimat_Synthmeat"
         };
     }
 
