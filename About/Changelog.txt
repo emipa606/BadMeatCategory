@@ -1,5 +1,8 @@
 # Changelog for BadMeatCategory
 
+1.4.2 - Addeds support for SynthMeat from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1715402900]Replimat[/url]. Thanks delmain!
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests
 
 
