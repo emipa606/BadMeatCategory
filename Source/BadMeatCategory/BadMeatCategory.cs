@@ -4,7 +4,6 @@ using Verse;
 
 namespace BadMeatCategory;
 
-[StaticConstructorOnStartup]
 public class BadMeatCategory
 {
     static List<string> GetExtraThingDefs()
@@ -17,7 +16,7 @@ public class BadMeatCategory
         };
     }
 
-    static BadMeatCategory()
+    internal static void SetupBadMeatCategory()
     {
         var MeatRawCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatRaw");
         if (MeatRawCategory == null)
