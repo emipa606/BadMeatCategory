@@ -6,13 +6,14 @@ namespace BadMeatCategory;
 
 public class BadMeatCategory
 {
-    static List<string> GetExtraThingDefs()
+    private static List<string> GetExtraThingDefs()
     {
         return new List<string>
         {
             "Meat_Chaocow",
             "MeatRotten",
-            "Replimat_Synthmeat"
+            "Replimat_Synthmeat",
+            "VAEWaste_ToxicMeat"
         };
     }
 
