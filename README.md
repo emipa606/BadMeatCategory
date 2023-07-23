@@ -4,7 +4,17 @@
 
 
 Puts all meat that is defined as coming from a Humanlike race and would cause bad thoughts from eating in its own category 
-Also moves meat from Insectoids, rotten meat from https://steamcommunity.com/sharedfiles/filedetails/?id=2466790513]Rotten Meat and Chaomeat from https://steamcommunity.com/sharedfiles/filedetails/?id=1786466855]Pawnmorpher
+Also
+
+
+-  Meat from Insectoids
+-  Rotten meat from https://steamcommunity.com/sharedfiles/filedetails/?id=2466790513]Rotten Meat
+-  Chaomeat from https://steamcommunity.com/sharedfiles/filedetails/?id=1786466855]Pawnmorpher
+-  Rotten Meat from https://steamcommunity.com/sharedfiles/filedetails/?id=2916253559]Biotech xenotype expanded - Rotfish
+-  Synthmeat from https://steamcommunity.com/sharedfiles/filedetails/?id=1715402900]Replimat
+-  Toxic meat from https://steamcommunity.com/sharedfiles/filedetails/?id=2962126499]Vanilla Animals Expanded - Waste Animals
+
+
 
 Russian translation by Tkhakiro
 
@@ -29,4 +39,4 @@ https://ko-fi.com/G2G55DDYD]![Image](https://i.imgur.com/VWG0yff.png)
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2470221991]Last updated 2023-04-16
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2470221991]Last updated 2023-07-23

@@ -10,10 +10,11 @@ public class BadMeatCategory
     {
         return new List<string>
         {
-            "Meat_Chaocow",
-            "MeatRotten",
-            "Replimat_Synthmeat",
-            "VAEWaste_ToxicMeat"
+            "Meat_Chaocow", //Pawnmorpher
+            "MeatRotten", //Rotten Meat
+            "Replimat_Synthmeat", //Replimat
+            "RF_RottenMeat", //Biotech xenotype expanded - Rotfish
+            "VAEWaste_ToxicMeat" //Vanilla Animals Expanded - Waste Animals
         };
     }
 
