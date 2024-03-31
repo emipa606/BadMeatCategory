@@ -1,13 +1,12 @@
 ﻿using Verse;
 
-namespace BadMeatCategory
+namespace BadMeatCategory;
+
+[StaticConstructorOnStartup]
+public class Startup
 {
-    [StaticConstructorOnStartup]
-    public class Startup
+    static Startup()
     {
-        static Startup()
-        {
-            BadMeatCategory.SetupBadMeatCategory();
-        }
+        BadMeatCategory.SetupBadMeatCategory();
     }
 }

@@ -8,14 +8,14 @@ public class BadMeatCategory
 {
     private static List<string> GetExtraThingDefs()
     {
-        return new List<string>
-        {
+        return
+        [
             "Meat_Chaocow", //Pawnmorpher
             "MeatRotten", //Rotten Meat
             "Replimat_Synthmeat", //Replimat
             "RF_RottenMeat", //Biotech xenotype expanded - Rotfish
             "VAEWaste_ToxicMeat" //Vanilla Animals Expanded - Waste Animals
-        };
+        ];
     }
 
     internal static void SetupBadMeatCategory()
