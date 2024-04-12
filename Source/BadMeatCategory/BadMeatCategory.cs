@@ -14,7 +14,9 @@ public class BadMeatCategory
             "MeatRotten", //Rotten Meat
             "Replimat_Synthmeat", //Replimat
             "RF_RottenMeat", //Biotech xenotype expanded - Rotfish
-            "VAEWaste_ToxicMeat" //Vanilla Animals Expanded - Waste Animals
+            "VAEWaste_ToxicMeat", //Vanilla Animals Expanded - Waste Animals
+            "Meat_Twisted", //Anomaly
+            "Necro_Meat" //The Army Of Fetid Corpses
         ];
     }
 

@@ -1,5 +1,8 @@
 # Changelog for BadMeatCategory
 
+1.5.1 - Added support for twisted meat from the Anomaly DLC and Necro Meat from The Army Of Fetid Corpses
+
+
 1.5.0 - Mod updated for 1.5 and passed autotests
 
 
