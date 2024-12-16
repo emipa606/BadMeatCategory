@@ -1,5 +1,8 @@
 # Changelog for BadMeatCategory
 
+1.5.2 - Added support for dried insect/human meat from Medieval Overhaul
+
+
 1.5.1 - Added support for twisted meat from the Anomaly DLC and Necro Meat from The Army Of Fetid Corpses
 
 

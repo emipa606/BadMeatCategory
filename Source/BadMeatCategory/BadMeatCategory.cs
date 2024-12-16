@@ -11,6 +11,8 @@ public class BadMeatCategory
         return
         [
             "Meat_Chaocow", //Pawnmorpher
+            "DankPyon_DriedMeat_Human", //Medieval Overhaul
+            "DankPyon_DriedMeat_Insect", //Medieval Overhaul
             "MeatRotten", //Rotten Meat
             "Replimat_Synthmeat", //Replimat
             "RF_RottenMeat", //Biotech xenotype expanded - Rotfish
