@@ -2,11 +2,12 @@
   "Continued": false,
   "CanAdd": "0",
   "CanRemove": "0",
-  "PreviewVersion": "1.5",
+  "PreviewVersion": "1.6",
   "SocialImageSet": true,
   "FundingSet": true,
   "SearchTags": [
     "qol",
     "cooking"
-  ]
+  ],
+  "LastXmlCleaning": "2025-06-19T20:36:43.0638221+02:00"
 }

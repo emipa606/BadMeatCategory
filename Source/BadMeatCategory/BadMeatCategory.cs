@@ -6,7 +6,7 @@ namespace BadMeatCategory;
 
 public class BadMeatCategory
 {
-    private static List<string> GetExtraThingDefs()
+    private static List<string> getExtraThingDefs()
     {
         return
         [
@@ -24,33 +24,28 @@ public class BadMeatCategory
 
     internal static void SetupBadMeatCategory()
     {
-        var MeatRawCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatRaw");
-        if (MeatRawCategory == null)
+        var meatRawCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatRaw");
+        if (meatRawCategory == null)
         {
             Log.ErrorOnce("[BadMeatCategory]: Could not find the MeatRaw-category. Will not sort bad meat.",
                 "MeatRawCategory".GetHashCode());
             return;
         }
 
-        var MeatBadCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatBad");
-        if (MeatBadCategory == null)
+        var meatBadCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("MeatBad");
+        if (meatBadCategory == null)
         {
             Log.ErrorOnce("[BadMeatCategory]: Could not find the MeatBad-category. Will not sort bad meat.",
                 "MeatBadCategory".GetHashCode());
             return;
         }
 
-        var extraThingDefs = GetExtraThingDefs();
+        var extraThingDefs = getExtraThingDefs();
         var thingsToMove = new List<ThingDef>();
-        foreach (var descendantThingDef in MeatRawCategory.DescendantThingDefs)
+        foreach (var descendantThingDef in meatRawCategory.DescendantThingDefs)
         {
-            if (FoodUtility.GetMeatSourceCategory(descendantThingDef) == MeatSourceCategory.Humanlike)
-            {
-                thingsToMove.Add(descendantThingDef);
-                continue;
-            }
-
-            if (descendantThingDef.ingestible.sourceDef?.race != null &&
+            if (FoodUtility.GetMeatSourceCategory(descendantThingDef) == MeatSourceCategory.Humanlike ||
+                descendantThingDef.ingestible.sourceDef?.race != null &&
                 descendantThingDef.ingestible.sourceDef.race.FleshType == FleshTypeDefOf.Insectoid)
             {
                 thingsToMove.Add(descendantThingDef);
@@ -65,10 +60,10 @@ public class BadMeatCategory
 
         foreach (var thingDef in thingsToMove)
         {
-            MeatRawCategory.childThingDefs.Remove(thingDef);
-            thingDef.thingCategories.Remove(MeatRawCategory);
-            MeatBadCategory.childThingDefs.Add(thingDef);
-            thingDef.thingCategories.Add(MeatBadCategory);
+            meatRawCategory.childThingDefs.Remove(thingDef);
+            thingDef.thingCategories.Remove(meatRawCategory);
+            meatBadCategory.childThingDefs.Add(thingDef);
+            thingDef.thingCategories.Add(meatBadCategory);
             if (thingDef.defName != "MeatRotten")
             {
                 continue;
@@ -86,10 +81,10 @@ public class BadMeatCategory
             rottenCategoryDef.ClearCachedData();
         }
 
-        MeatRawCategory.ClearCachedData();
-        MeatBadCategory.ClearCachedData();
-        MeatRawCategory.ResolveReferences();
-        MeatBadCategory.ResolveReferences();
+        meatRawCategory.ClearCachedData();
+        meatBadCategory.ClearCachedData();
+        meatRawCategory.ResolveReferences();
+        meatBadCategory.ResolveReferences();
         Log.Message($"[BadMeatCategory]: Moved {thingsToMove.Count} meat to the Bad Meat-category");
     }
 }
