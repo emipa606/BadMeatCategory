@@ -4,7 +4,7 @@ using Verse;
 
 namespace BadMeatCategory;
 
-public class BadMeatCategory
+public static class BadMeatCategory
 {
     private static List<string> getExtraThingDefs()
     {

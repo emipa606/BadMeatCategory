@@ -3,7 +3,7 @@
 namespace BadMeatCategory;
 
 [StaticConstructorOnStartup]
-public class Startup
+public static class Startup
 {
     static Startup()
     {

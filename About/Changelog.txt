@@ -1,5 +1,8 @@
 # Changelog for BadMeatCategory
 
+1.7.0 - Mod updated for 1.7 and passed autotests
+
+
 1.6.1 - ADded compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3538199657]UwU 2.0[/url]
 
 

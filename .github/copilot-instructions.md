@@ -1,75 +1,57 @@
-# .github/copilot-instructions.md
+# GitHub Copilot Instructions for Bad Meat Category Mod Development
 
-## Mod Overview and Purpose
+## Overview and Purpose
 
-**Mod Name:** Bad Meat Category
-
-**Description:**  
-The Bad Meat Category mod categorizes different types of meat that would typically generate negative moods or thoughts when consumed in RimWorld. By sorting these meats into unique categories, players can manage and handle them more effectively in the game. It enhances gameplay by refining how meat types are identified and processed, improving the overall colony management experience.
-
-The mod also includes a Russian translation courtesy of Tkhakiro, and it was inspired by an idea from Rasutei.
+The **Bad Meat Category** mod is designed to enhance the organization of RimWorld's inventory system by categorizing various types of meats that are undesirable due to their source or potential negative effects when consumed. This includes meat obtained from different factions or creatures that would cause bad thoughts or have unique properties. The mod introduces distinct categories for these meats, making it easier for players to manage their resources and avoid accidental consumption by their colonists.
 
 ## Key Features and Systems
 
-1. **Humanlike Race Meat Categorization:**  
-   Categorizes all types of meat derived from humanlike races to avoid negative mood impacts when consumed by colonists.
-
-2. **Specialized Meat Categories:**  
-   - **Insectoids Meat**
-   - **Rotten Meat** including Biotech xenotype expanded from - Rotfish
-   - **Chaomeat** from Pawnmorpher
-   - **Synthmeat** from Replimat
-   - **Toxic Meat** from Vanilla Animals Expanded - Waste Animals
-   - **Twisted Meat** from the Anomaly DLC
-   - **Necro Meat** from The Army Of Fetid Corpses
-
-3. **Seamless Integration:**  
-   Integrates with existing systems and mod structures to work effortlessly within the game's framework.
+- **Custom Meat Categories**: The mod separates meats into specific categories based on origin or effect, such as:
+  - Humanlike race meats that cause negative moodlets.
+  - Insectoid meats.
+  - Chaomeat from the Pawnmorpher mod.
+  - Rotten and toxic meats from various mods.
+  - Synthmeat and necro meat from other RimWorld expansions.
+- **Russian Localization**: The mod features a Russian translation, thanks to the contributions of Tkhakiro.
+- **Seamless Integration**: The mod integrates with existing categories and remains compatible with popular RimWorld expansions that introduce new meat types.
 
 ## Coding Patterns and Conventions
 
-- **Consistent Naming:**  
-  Use CamelCase for class names and methods in C#. Ensure the names provide clear understanding of the functionality.
-
-- **Single Responsibility Principle:**  
-  Ensure each class and method has a single responsibility to maintain clarity and facilitate easy debugging and maintenance.
-
-- **Comments and Documentation:**  
-  Use XML documentation comments for classes and methods, providing descriptions of their purposes and any parameters.
-
-- **Error Handling:**  
-  Implement try-catch blocks where necessary to handle potential exceptions gracefully.
+- **Consistent Naming**: Use PascalCase for class and method names, and camelCase for local variables within methods.
+- **Clear Method Functionality**: Methods like `getExtraThingDefs` and `SetupBadMeatCategory` should explicitly state their purpose through names and comments where necessary.
+- **XML Integration**: Utilize XML files to define custom categories, keeping them separate from code logic to allow easy localization and customization.
 
 ## XML Integration
 
-- Incorporate XML definitions for categories and translations.
-- Use XML to define new item categories and integrate them with existing game assets.
-- Ensure correct linking between C# logic and XML definitions to maintain functionality and ensure compatibility.
+- **XML Structure**:
+  - Use XML files to define custom meat categories. The mod’s XML definition resides in `ThingCategories.xml`.
+  - Follow RimWorld's XML schema for ThingCategoryDef to ensure proper integration.
+
+Example Snippet:
+xml
+<ThingCategoryDef>
+  <defName>BadMeatCategory</defName>
+  <label>bad meat</label>
+  <description>Meat that causes negative effects when consumed.</description>
+  ...
+</ThingCategoryDef>
+
 
 ## Harmony Patching
 
-- Use Harmony to apply Postfix and Prefix patches where necessary to modify existing methods in the base game.
-- Adhere to non-destructive modifications, ensuring compatibility with other mods by avoiding method replacement unless absolutely necessary.
-- Before deploying patches, test thoroughly in a modded environment to ensure no conflicts or unexpected behaviors arise.
+- **Usage of Harmony**: Employ Harmony to patch the necessary methods in RimWorld to introduce new categories without modifying the original game files directly.
+- **Target Specific Methods**: Focus on methods handling meat classification and inventory management.
+- **Safety in Patching**: Ensure patches perform existence checks to prevent runtime errors.
 
 ## Suggestions for Copilot
 
-1. **Code Generation:**  
-   Use Copilot to assist with boilerplate code generation for class structures, method skeletons, and XML definitions.
+- **Autocomplete Feature**: Utilize GitHub Copilot to generate stubs for new methods such as category management functions.
+- **Refactoring Suggestions**: Consider using Copilot to refactor repetitive code patterns, making the code base cleaner and more efficient.
+- **Documentation Generation**: Use Copilot to help generate XML documentation comments for public methods and classes to improve code readability.
+- **Localization Assistance**: Leverage Copilot to automate string conversion for new category labels to ensure consistent localization support.
+- **Harmony Examples**: Request Copilot to provide examples of Harmony patches, specifically for targeting methods in `ThingCategory` manipulations.
 
-2. **Code Suggestions:**  
-   Enable Copilot to provide real-time code suggestions to improve efficiency while writing C# and XML.
-
-3. **Translation Management:**  
-   Use Copilot to suggest translations based on existing content to streamline multi-language support.
-
-4. **Harmony Patch Guidance:**  
-   Employ Copilot to help identify potential points for patching and to suggest suitable Harmony code patterns.
-
-5. **Error Checking:**  
-   Utilize Copilot to identify potential logical errors and suggest corrections, improving code robustness.
-
-Incorporating these guidelines will ensure that the Bad Meat Category mod is both functional and easy to maintain, while allowing for future enhancements and compatibility with other mods.
+By following these guidelines and utilizing the tools mentioned, the development and maintenance of the **Bad Meat Category** mod should be streamlined and effective, providing an enhanced modding experience for the RimWorld community.
 
 ## Project Solution Guidelines
 - Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
@@ -78,3 +60,11 @@ Incorporating these guidelines will ensure that the Bad Meat Category mod is bot
 - When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
 - In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
 - For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+

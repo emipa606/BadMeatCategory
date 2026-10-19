@@ -41,4 +41,4 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/BadMeatCategory?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2470221991) | tags: qol, cooking
+[![Image](https://img.shields.io/github/v/release/emipa606/BadMeatCategory?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2470221991) | qol, cooking
